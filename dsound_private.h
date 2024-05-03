@@ -41,6 +41,8 @@
 
 #include "eax.h"
 
+#include <guiddef.h>
+
 #ifndef AL_SOFT_map_buffer
 #define AL_SOFT_map_buffer 1
 typedef unsigned int ALbitfieldSOFT;
@@ -63,6 +65,8 @@ typedef void (AL_APIENTRY*LPALFLUSHMAPPEDBUFFERSOFT)(ALuint buffer, ALsizei offs
 #define UNLIKELY(x) (!!(x))
 #endif
 
+DEFINE_GUID(CLSID_MMDeviceEnumerator, 0xBCDE0395, 0xE52F, 0x467C, 0x8E, 0x3D, 0xC4, 0x57, 0x92, 0x91, 0x69, 0x2E);
+DEFINE_GUID(IID_IMMDeviceEnumerator, 0xA95664D2, 0x9614, 0x4F35, 0xA7, 0x46, 0xDE, 0x8D, 0xB6, 0x36, 0x17, 0xE6);
 
 extern int LogLevel;
 extern FILE *LogFile;
