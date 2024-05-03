@@ -21,6 +21,7 @@
  */
 
 #define CONST_VTABLE
+#define COBJMACROS
 #include <stdarg.h>
 #include <string.h>
 

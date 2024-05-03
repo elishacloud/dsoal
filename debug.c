@@ -58,8 +58,9 @@ const char *wine_dbgstr_wn( const WCHAR *str, int n )
     if (!((ULONG_PTR)str >> 16))
     {
         if (!str) return "(null)";
-        res = get_temp_buffer( 6 );
-        sprintf( res, "#%04x", LOWORD(str) );
+        const int bufferSize = 8;
+        res = get_temp_buffer(bufferSize);
+        sprintf_s( res, bufferSize, "#%04x", LOWORD(str) );
         return res;
     }
     if (n == -1)
@@ -89,7 +90,7 @@ const char *wine_dbgstr_wn( const WCHAR *str, int n )
             else
             {
                 *dst++ = '\\';
-                sprintf(dst,"%04x",c);
+                snprintf( dst, size - (dst - res), "%04x", c );
                 dst+=4;
             }
         }

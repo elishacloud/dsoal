@@ -34,6 +34,7 @@
 
 #define CONST_VTABLE
 #define INITGUID
+#define COBJMACROS
 #include <stdarg.h>
 #include <string.h>
 

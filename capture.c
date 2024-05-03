@@ -712,7 +712,7 @@ static HRESULT WINAPI DSCBuffer_GetObjectInPath(IDirectSoundCaptureBuffer8 *ifac
     return E_NOTIMPL;
 }
 
-static HRESULT WINAPI DSCBuffer_GetFXStatus(IDirectSoundCaptureBuffer8 *iface, DWORD count, DWORD *status)
+static HRESULT WINAPI DSCBuffer_GetFXStatus(IDirectSoundCaptureBuffer8 *iface, DWORD count, LPDWORD status)
 {
     FIXME("(%p)->(%lu, %p) stub\n", iface, count, status);
     return E_NOTIMPL;
