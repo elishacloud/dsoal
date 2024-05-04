@@ -297,6 +297,7 @@ extern LPALDOPPLERVELOCITY palDopplerVelocity;
 extern LPALDISTANCEMODEL palDistanceModel;
 extern LPALSPEEDOFSOUND palSpeedOfSound;
 
+#ifndef AL_LIBTYPE_STATIC
 #define alcCreateContext palcCreateContext
 #define alcMakeContextCurrent palcMakeContextCurrent
 #define alcProcessContext palcProcessContext
@@ -390,6 +391,7 @@ extern LPALSPEEDOFSOUND palSpeedOfSound;
 #define alDopplerVelocity palDopplerVelocity
 #define alDistanceModel palDistanceModel
 #define alSpeedOfSound palSpeedOfSound
+#endif
 
 /* Extension functions. Technically device- or driver-specific, but as long as
  * they're pulled from the NULL device it should be routed correctly.

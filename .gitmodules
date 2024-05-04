@@ -1,0 +1,3 @@
+[submodule "openal"]
+	path = openal
+	url = https://github.com/elishacloud/openal-soft

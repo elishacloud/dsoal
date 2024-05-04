@@ -235,6 +235,7 @@ static BOOL load_libopenal(void)
     if(str && *str)
         LogLevel = atoi(str);
 
+#ifndef AL_LIBTYPE_STATIC
     openal_handle = LoadLibraryW(aldriver_name);
     if(!openal_handle)
     {
@@ -353,6 +354,7 @@ static BOOL load_libopenal(void)
         openal_handle = NULL;
         return FALSE;
     }
+#endif
 
     openal_loaded = 1;
     TRACE("Loaded %ls\n", aldriver_name);
