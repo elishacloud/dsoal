@@ -46,16 +46,17 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -83,20 +84,25 @@
       <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)include\AL</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>AL_LIBTYPE_STATIC;ALC_LIBTYPE_STATIC;_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDLL;WIN32;_DEBUG;_WINDOWS;_WIN32_WINNT=0x0501;AL_LIBTYPE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4090;4996</DisableSpecificWarnings>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>msvc.def</ModuleDefinitionFile>
       <AdditionalDependencies>winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)include\AL</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <PreprocessorDefinitions>AL_LIBTYPE_STATIC;ALC_LIBTYPE_STATIC;_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDLL;WIN32;NDEBUG;_WINDOWS;_WIN32_WINNT=0x0501;AL_LIBTYPE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4090;4996</DisableSpecificWarnings>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
@@ -105,6 +111,10 @@
       <ModuleDefinitionFile>msvc.def</ModuleDefinitionFile>
       <AdditionalDependencies>winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

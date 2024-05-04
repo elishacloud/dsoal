@@ -1027,8 +1027,7 @@ DSOAL_DirectSoundCreate(LPCGUID lpcGUID, IDirectSound **ppDS, IUnknown *pUnkOute
  *     Failure: DSERR_ALLOCATED, DSERR_INVALIDPARAM, DSERR_NOAGGREGATION,
  *              DSERR_NODRIVER, DSERR_OUTOFMEMORY
  */
-HRESULT WINAPI
-DSOAL_DirectSoundCreate8(LPCGUID lpcGUID, IDirectSound8 **ppDS, IUnknown *pUnkOuter)
+DECLSPEC_EXPORT HRESULT WINAPI DSOAL_DirectSoundCreate8(LPCGUID lpcGUID, IDirectSound8** ppDS, IUnknown* pUnkOuter)
 {
     HRESULT hr;
     void *pDS;
@@ -1340,7 +1339,7 @@ HRESULT WINAPI DSOAL_DllCanUnloadNow(void)
 /***********************************************************************
  *           DllMain (DSOUND.init)
  */
-DECLSPEC_EXPORT BOOL WINAPI DllMain(HINSTANCE hInstDLL, DWORD fdwReason, LPVOID lpvReserved)
+DECLSPEC_EXPORT BOOL WINAPI DSOAL_DllMain(HINSTANCE hInstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
     const WCHAR *wstr;
 

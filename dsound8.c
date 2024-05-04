@@ -480,7 +480,7 @@ static inline DSDevice *impl_from_IDirectSound(IDirectSound *iface)
 HRESULT DSOUND_Create(REFIID riid, void **ds)
 { return DSDevice_Create(FALSE, riid, ds); }
 
-HRESULT DSOUND_Create8(REFIID riid, LPVOID *ds)
+HRESULT DSOUND_Create8(REFIID riid, void** ds)
 { return DSDevice_Create(TRUE, riid, ds); }
 
 static HRESULT DSDevice_Create(BOOL is8, REFIID riid, LPVOID *ds)

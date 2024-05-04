@@ -56,6 +56,17 @@ typedef void (AL_APIENTRY*LPALUNMAPBUFFERSOFT)(ALuint buffer);
 typedef void (AL_APIENTRY*LPALFLUSHMAPPEDBUFFERSOFT)(ALuint buffer, ALsizei offset, ALsizei length);
 #endif
 
+#ifndef KSAUDIO_SPEAKER_5POINT1_SURROUND
+#define KSAUDIO_SPEAKER_5POINT1_SURROUND (SPEAKER_FRONT_LEFT | SPEAKER_FRONT_RIGHT | \
+                                         SPEAKER_FRONT_CENTER | SPEAKER_LOW_FREQUENCY | \
+                                         SPEAKER_SIDE_LEFT  | SPEAKER_SIDE_RIGHT)
+#endif
+#ifndef KSAUDIO_SPEAKER_7POINT1_SURROUND
+#define KSAUDIO_SPEAKER_7POINT1_SURROUND (SPEAKER_FRONT_LEFT | SPEAKER_FRONT_RIGHT | \
+                                         SPEAKER_FRONT_CENTER | SPEAKER_LOW_FREQUENCY | \
+                                         SPEAKER_BACK_LEFT | SPEAKER_BACK_RIGHT | \
+                                         SPEAKER_SIDE_LEFT | SPEAKER_SIDE_RIGHT)
+#endif
 
 #ifdef __GNUC__
 #define LIKELY(x) __builtin_expect(!!(x), !0)
