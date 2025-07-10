@@ -28,7 +28,10 @@
 #include <windows.h>
 #include <dsound.h>
 #include <ks.h>
+#pragma warning(push)          // Save current warning state
+#pragma warning(disable: 4091) // Disable warning 4091
 #include <ksmedia.h>
+#pragma warning(pop)           // Restore previous warning state
 
 #include "dsound_private.h"
 
